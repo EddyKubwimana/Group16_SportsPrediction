@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FIFA PREDICTION</title>
+    <style>
+        body {
+            margin:40px 400px 40px 400px;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            align-content: center;   
+            background-image: url("https://wallpaperaccess.com/full/4718959.jpg");   
+
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            align-items:center;
+            margin: 20px, 20px;
+            min-width:500px;
+            box-shadow: inset 20px 20px 20px rgba(0,0,0,0.05),
+                25px 35px 20px rgba(0,0,0,0.05),
+                25px 20px 20px rgba(0,0,0,0.05),
+                inset 25px 30px 30px rgba(255,255,255,0.9);
+            
+        }
+
+        .names {
+    text-align: center;
+        } 
+
+#blinking-text {
+    font-size: 36px;
+    font-weight: bold;
+    text-transform: uppercase;
+    animation: blink 10s infinite, colorChange 10s linear infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 2; }
+}
+
+@keyframes colorChange {
+    0% { color: #ff0000; }
+    10% { color: #00ff00; }
+    20% { color: #0000ff; }
+    30% { color: #ff00ff; }
+    40% { color: #ffff00; }
+    50% { color: #10208a; }
+    60% { color: #080806; }
+    70% { color: #ff00d4; }
+    80% { color: #f1f112; }
+    90% { color: #ff4d00; }
+    100% { color: #f70a0a; }
+
+}
+
+button{
+
+    color :#0000ff;
+    font-size: large;
+    max-width: 300px;
+    
+}
+
+/* static/css/forms.css */
+.form-field {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.form-field label {
+    flex-basis: 40%;
+    text-align: right;
+    padding-right: 10px;
+}
+
+.form-field input[type="text"] {
+    flex-basis: 60%;
+}
+
+
+
+
+</style>
+</head>
+<body>
+        
+
+            <h1 style = "color : white">FIFA PREDICTION FOR OVERALL RATING</h1>
+
+            <div class="names">
+                <h1 id="blinking-text">Eddy & Nicole</h1>
+            </div>
+
+         <form method="post">
+            {% csrf_token %}
+            
+            <div class="form-field">
+                <label for="{{ form.VALUE_EUR.id_for_label }}">VALUE EUR:</label>
+                {{ form.VALUE_EUR }}
+            </div>
+            
+            <div class="form-field">
+                <label for="{{ form.RELEASE_CLAUSE_EUR.id_for_label }}">RELEASE CLAUSE EUR:</label>
+                {{ form.RELEASE_CLAUSE_EUR }}
+            </div>
+        
+            <div class="form-field">
+                <label for="{{ form.AGE.id_for_label }}">AGE:</label>
+                {{ form.AGE }}
+            </div>
+        
+            <div class="form-field">
+                <label for="{{ form.POTENTIAL.id_for_label }}">POTENTIAL:</label>
+                {{ form.POTENTIAL }}
+            </div>
+        
+            <div class="form-field">
+                <label for="{{ form.MOVEMENT_REACTION.id_for_label }}">MOVEMENT REACTION:</label>
+                {{ form.MOVEMENT_REACTION }}
+            </div>
+        
+            <div class="form-field">
+                <label for="{{ form.PREDICTION.id_for_label }}">PREDICTION:</label>
+                {{ form.PREDICTION }}
+            </div>
+
+
+
+            <div class="form-field">
+                <label for="{{ form.CONFIDENCE.id_for_label }}">CONFIDENCE:</label>
+                {{ form.CONFIDENCE }}
+            </div>
+
+
+
+            
+        
+            <input type="submit" value="Submit">
+        </form>
+        
+
+</body>
+</html>
